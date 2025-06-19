@@ -7,8 +7,11 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js"
   },
+  "engines": {
+    "node": "18.x"
+  },
   "keywords": [],
-  "author": "",
+  "author": "Anurag Singh",
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {
