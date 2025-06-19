@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Whatsapp</title>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'JetBrains Mono', monospace;
+      background-color: #f0f2f5;
+      margin: 0;
+      padding: 20px;
+      color: #333;
+    }
+
+    h1 {
+      text-align: center;
+      color: #075e54;
+      margin-bottom: 40px;
+    }
+
+    .chat-box {
+      background-color: #fff;
+      border: 1px solid #ddd;
+      border-left: 5px solid #25d366;
+      padding: 15px 20px;
+      margin-bottom: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .chat-box h2 {
+      margin: 5px 0;
+      font-size: 1rem;
+    }
+
+    .chat-box h2 span {
+      color: #555;
+      font-weight: normal;
+    }
+
+    .btn-container {
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    .add-btn {
+      background-color: #25d366;
+      color: white;
+      border: none;
+      padding: 12px 25px;
+      font-size: 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .add-btn:hover {
+      background-color: #1ebc5c;
+    }
+
+    .btn-group {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1rem;
+      justify-content: center; /* Center buttons, optional */
+    }
+
+  </style>
+</head>
+<body>
+
+  <h1>All Chats</h1>
+
+  <% for(let chat of chats){ %>
+    <div class="chat-box">
+      <h2>From : <span><%= chat.from %></span></h2>
+      <h2>To : <span><%= chat.to %></span></h2>
+      <h2>Message : <span><%= chat.msg %></span></h2>
+      <h2>Time : <span><%= chat.created_at.toLocaleString() %></span></h2>
+
+      <div class="btn-group">
+          <form action="/chats/<%= chat._id %>/edit" method="GET">
+              <button class="add-btn">Edit Chat</button>
+          </form>
+
+          <form method="POST" action="/chats/<%= chat._id %>?_method=DELETE">
+              <button class="add-btn">Delete Chat</button>
+          </form>
+      </div>
+    </div>
+  <% } %>
+
+<form action = "/chats/new" method = "GET">
+    <div class="btn-container">
+        <button class="add-btn">Add Chat</button>
+    </div>
+</form>
+
+</body>
+</html>

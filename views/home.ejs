@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Chat App</title>
+    <!-- JetBrains Mono font -->
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'JetBrains Mono', monospace;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: #fff;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 1rem; /* mobile ke liye thoda space */
+        }
+
+        .hero {
+            max-width: 700px;
+            width: 100%;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 1rem;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(12px);
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            color: #e0e0e0;
+            line-height: 1.6;
+            text-align: justify;
+            margin-left: 1rem;
+            margin-right: 1rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 2.2rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #fff;
+            background-color: #ff7e5f;
+            border: none;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .btn:hover {
+            background-color: #eb5757;
+            transform: translateY(-2px);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 600px) {
+            h1 { font-size: 2.2rem; }
+            p { font-size: 1rem; margin-left: 0.8rem; margin-right: 0.8rem; }
+            .hero { padding: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <h1>Welcome to Chat App</h1>
+        <p>Connect, chat, and stay in touch with your friends and community. Start exploring your conversations now and make meaningful connections!</p>
+        <a href="/chats" class="btn">Go to Chats</a>
+    </div>
+</body>
+</html>
